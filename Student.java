@@ -69,3 +69,32 @@ class Student {
 		return false;
 	}
 }
+class Course {
+
+    List<Student>studentsList=new ArrayList<>();
+
+
+    public Course(List<Student> studentsList) {
+        this.studentsList = studentsList;
+    }
+
+    public List<Student> getStudentsList() {
+        return studentsList;
+    }
+
+    public void setStudentsList(List<Student> studentsList) {
+        this.studentsList = studentsList;
+    }
+    public int signatures()//broj na potpisi
+    {
+        int total=0;
+        for(Student t:studentsList)
+        {
+            if(t.hasSignature())
+            {
+                total +=1;
+            }
+        }
+        return total;
+    }
+}
